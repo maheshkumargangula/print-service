@@ -1,7 +1,7 @@
 const os = require('os');
 
 const envVariables = {
-    port: process.env.service_port || 9001,
+    port: process.env.service_port || 5000,
     threads: process.env.service_threads || os.cpus().length,
     azureAccountName: process.env.sunbird_azure_account_name,
     azureAccountKey: process.env.sunbird_azure_account_key,
