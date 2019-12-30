@@ -35,3 +35,4 @@ const express = require('express'),
     const app = createAppServer();
     app.listen(port, () => console.log(`print-service is running in test env on port ${port} with ${process.pid} pid`));
   }
+  
