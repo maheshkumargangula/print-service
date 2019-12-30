@@ -40,7 +40,7 @@ class PrintService {
                   printService.sendSuccess(res, { id: 'api.print.preview.generate' }, { pdfUrl: pdfUrl });
                 } else {
                     console.error("Error: ", JSON.stringify(error));
-                  printService.sendError(res);   
+                  printService.sendError(res, { id: 'api.print.preview.generate' });   
                 }
               })
           })();
