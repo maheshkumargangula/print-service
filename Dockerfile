@@ -12,4 +12,5 @@ RUN apt-get clean \
 USER sunbird
 COPY --from=build --chown=sunbird /opt/print-service/ /home/sunbird/print-service/
 WORKDIR /home/sunbird/print-service/
+RUN npm install puppeteer@2.0.0
 CMD ["node", "app.js", "&"]
