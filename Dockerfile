@@ -3,7 +3,7 @@ MAINTAINER "Mahesh Kumar Gangula" "mahesh@ilimi.in"
 USER root
 COPY src /opt/print-service/
 WORKDIR /opt/print-service/
-RUN npm install
+RUN npm install --unsafe-perm
 
 FROM node:8.11-slim
 MAINTAINER "Mahesh Kumar Gangula" "mahesh@ilimi.in"

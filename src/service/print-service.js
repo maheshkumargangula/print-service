@@ -9,10 +9,15 @@ config = require('../envVariables')
 class PrintService {
     constructor(config) {
         (async() => {
-            this.config = config;
-            this.browser = await puppeteer.launch();
-            this.blobService = azure.createBlobService(this.config.azureAccountName, this.config.azureAccountKey);
-            this.pdfBasePath = '/tmp/'
+            try {
+              this.config = config;
+              this.pdfBasePath = '/tmp/'
+              this.browser = await puppeteer.launch();
+              this.blobService = azure.createBlobService(this.config.azureAccountName, this.config.azureAccountKey);
+            } catch(e) {
+                console.error(e);
+            }
+            
         })();
     }
 
