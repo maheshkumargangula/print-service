@@ -12,7 +12,10 @@ class PrintService {
             try {
               this.config = config;
               this.pdfBasePath = '/tmp/'
-              this.browser = await puppeteer.launch();
+              this.browser = await puppeteer.launch({
+                  executablePath: 'google-chrome-unstable',
+                  args: ['--disable-dev-shm-usage', '--no-sandbox', '--disable-setuid-sandbox']
+                });
               this.blobService = azure.createBlobService(this.config.azureAccountName, this.config.azureAccountKey);
             } catch(e) {
                 console.error(e);
